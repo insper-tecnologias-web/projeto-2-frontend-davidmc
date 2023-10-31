@@ -1,9 +1,9 @@
-import {Bitcoin, Star} from 'lucide-react';
+import {Bitcoin, Star, DollarSign, CandlestickChart} from 'lucide-react';
 const Container = (props) => {
     return(
         <div className = 'flex flex-col grow mx-2.5'>
             <div className = 'flex flex-row items-center my-2.5'>
-                <Bitcoin></Bitcoin>
+                <props.icon></props.icon>
                 <h1 className = 'mx-0.5 text-2xl'>{props.title}</h1>
             </div>
             
