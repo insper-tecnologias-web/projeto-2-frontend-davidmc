@@ -12,61 +12,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const Container = (props) => {
-  
-  const [watch, setWatch] = useState([]);
-  const [uuidArray, setUuidArray] = useState([]);
-  const uuidList = [];
- 
-  // Fetch watchlist data and update uuidArray when the component mounts
-  axios.get("http://127.0.0.1:8000/api/watchlist/")
-    .then((res) => {
-      setWatch(res.data);
-      res.data.map((coin) => {
-        uuidList.push(coin.key)
-        setUuidArray(uuidList);
-      })
-    });
-  
-  
-  const handleStar = (uuid) => {
-    return uuidArray.includes(uuid);
-  }
-  
+const ContainerWatch = (props) => {
     
-
-  const handleClick = (coin) => {
-    axios.get("http://127.0.0.1:8000/api/watchlist/")
-    .then((res) => {
-      setWatch(res.data);
-      res.data.map((coin) => {
-        uuidList.push(coin.key)
-        setUuidArray(uuidList);
-      })
-    });
-    
-    
-    const data = {
-      "name": coin.name,
-      "symbol": coin.symbol,
-      "price": coin.price,
-      "iconUrl": coin.iconUrl,
-      "rank": coin.rank,
-      "key": coin.uuid,
-      "change": coin.change,
-      "marketCap": coin.marketCap,
-      "volume": coin['24hVolume']
-    };
-
-    // Make the API request to update the watchlist
-    axios.post(`http://127.0.0.1:8000/api/watchlist/${coin.uuid}/`, data)
-      .then(() => {
-        // After the request is successful, update the watchlist and uuidArray
-        setWatch([...watch, data]);
-        setUuidArray([...uuidArray, data.key]);
-      });
-  }
-
   const getVolume = (coin) => {
     // Check if the "volume" property exists, if not, use "24hVolume"
     if (coin.hasOwnProperty('volume')) {
@@ -106,8 +53,8 @@ const Container = (props) => {
           {props.coins.map((coin) => (
             <TableRow key={getKey(coin)}>
               <TableCell>
-                <button onClick={() => handleClick(coin)}>  
-                  <Star absoluteStrokeWidth={false} color =  {handleStar(getKey(coin)) ? "#ffc40c": "black"}className={`max-h-4 aling-center bg-origin-content`}></Star> 
+                <button>  
+                  <Star absoluteStrokeWidth={false} color = "#ffc40c" className={`max-h-4 aling-center bg-origin-content`}></Star> 
                 </button>
               </TableCell>
               <TableCell className='text-gray-700 font-semibold'>{coin.rank}</TableCell>
@@ -128,4 +75,4 @@ const Container = (props) => {
   );
 }
 
-export default Container;
+export default ContainerWatch;

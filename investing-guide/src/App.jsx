@@ -53,7 +53,6 @@ export default function App() {
   
   return (
     <div className = 'bg-white h-full w-max-screen-3xl w-min-screen-sm'>
-      
       <Header/>
       <Card total24Volume = {parseFloat(totalVolume).toFixed(2)} totalMarketCap = {parseFloat(totalMarketCap).toFixed(2)}></Card>
       <h1 className = 'ml-7 mt-10 mr-4 font-mono font-black text-xl md:text-2xl mx-0.5 md:mx-36'>50 biggest Cryptocurrencies by Market Cap</h1>
