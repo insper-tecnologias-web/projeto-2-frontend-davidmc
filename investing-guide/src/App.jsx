@@ -38,7 +38,8 @@ export default function App() {
   const [coins, setCoins] = useState([]);
   const[totalMarketCap, setTotalMarketCap] = useState()
   const[totalVolume, setTotal24Volume] = useState()
-  // const response = await getCrypto();
+  
+  
 
   useEffect(() => {
     const response = getCrypto()
@@ -49,8 +50,7 @@ export default function App() {
     })
   }, [])
 
-
-
+  
   return (
     <div className = 'bg-white h-full w-max-screen-3xl w-min-screen-sm'>
       
