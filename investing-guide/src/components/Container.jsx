@@ -103,24 +103,30 @@ const Container = (props) => {
           </TableRow>
         </TableHeader>
         <TableBody>
+          
           {props.coins.map((coin) => (
+           
             <TableRow key={getKey(coin)}>
+               
               <TableCell>
                 <button onClick={() => handleClick(coin)}>  
                   <Star absoluteStrokeWidth={false} color =  {handleStar(getKey(coin)) ? "#ffc40c": "black"}className={`max-h-4 aling-center bg-origin-content`}></Star> 
                 </button>
               </TableCell>
               <TableCell className='text-gray-700 font-semibold'>{coin.rank}</TableCell>
-              <TableCell className='flex flex-row space-between flex-wrap'>
+              <TableCell >
+                <Link to = {`/coin/${getKey(coin)}`} className='flex flex-row space-between flex-wrap'>
                 <img className='max-h-7 mr-4' src={coin.iconUrl}></img>
                 <div className='mr-4 text-black font-semibold'>{coin.name}</div>
                 <div className="font-medium text-gray-500">{coin.symbol}</div>
+                </Link>
               </TableCell>
               <TableCell className="text-black font-semibold">{parseFloat(coin.price).toFixed(4)}</TableCell>
               <TableCell className="text-black font-semibold">{parseFloat(coin.change).toFixed(2)}</TableCell>
               <TableCell className="text-black font-semibold">{parseFloat(coin.marketCap).toFixed(2)}</TableCell>
               <TableCell className="text-black font-semibold">{parseFloat(getVolume(coin)).toFixed(2)}</TableCell>
             </TableRow>
+           
           ))}
         </TableBody>
       </Table>

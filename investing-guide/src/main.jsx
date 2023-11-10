@@ -6,9 +6,14 @@ import './index.css';
 import App from './App';
 import Watchlist from './components/Watchlist/index'
 import axios from 'axios'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useParams } from 'react-router-dom';
+import Coin from './components/Coin/Coin'
 
 
+const CoinWrapper = () => {
+  const {coinKey} = useParams();
+  return <Coin coinKey = {coinKey}/>;
+}
 
 
 const router = createBrowserRouter(
@@ -23,6 +28,10 @@ const router = createBrowserRouter(
     path: "watchlist/",
     element: <Watchlist ></Watchlist>,
   }, 
+  {
+    path: "coin/:coinKey",
+    element: <CoinWrapper/>,
+  }
   
 ]);
 

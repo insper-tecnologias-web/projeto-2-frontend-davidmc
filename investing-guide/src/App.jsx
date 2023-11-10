@@ -42,7 +42,7 @@ export default function App() {
   
 
   useEffect(() => {
-    const response = getCrypto()
+    getCrypto()
     .then((response) => {
       setCoins(response.data.data.coins);
       setTotalMarketCap(response.data.data.stats.totalMarketCap);
