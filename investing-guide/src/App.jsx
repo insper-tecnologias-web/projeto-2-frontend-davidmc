@@ -55,7 +55,7 @@ export default function App() {
     <div className = 'bg-white h-full w-max-screen-3xl w-min-screen-sm'>
       <Header/>
       <Card total24Volume = {parseFloat(totalVolume).toFixed(2)} totalMarketCap = {parseFloat(totalMarketCap).toFixed(2)}></Card>
-      <h1 className = 'ml-7 mt-10 mr-4 font-mono font-black text-xl md:text-2xl mx-0.5 md:mx-36'>50 biggest Cryptocurrencies by Market Cap</h1>
+      <h1 className = 'ml-7 mt-10 mr-4 font-mono font-black text-xl md:text-4xl mx-0.5 md:mx-36'>50 biggest Cryptocurrencies by Market Cap</h1>
       <div className = 'flex flex-row grow justify-evenly mb-16 mt-7 mx-0.5 md:mx-20 '>
         <Container icon = {Bitcoin} title = "Cryptocurrencies" coins = {coins}/>
         
