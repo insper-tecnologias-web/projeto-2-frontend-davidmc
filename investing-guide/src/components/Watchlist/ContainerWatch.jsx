@@ -53,9 +53,9 @@ const ContainerWatch = (props) => {
           {props.coins.map((coin) => (
             <TableRow key={getKey(coin)}>
               <TableCell>
-                <button>  
+                 
                   <Star absoluteStrokeWidth={false} color = "#ffc40c" className={`max-h-4 aling-center bg-origin-content`}></Star> 
-                </button>
+                
               </TableCell>
               <TableCell className='text-gray-700 font-semibold text-md md:text-lg self-center'>{coin.rank}</TableCell>
               <TableCell className='flex flex-row space-between flex-wrap'>
