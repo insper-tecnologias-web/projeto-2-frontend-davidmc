@@ -20,7 +20,7 @@ const Container = (props) => {
  
   // Fetch watchlist data and update uuidArray when the component mounts
   useEffect(() => {
-    axios.get("https://projeto-2-backend-davidmc.vercel.app//api/watchlist/")
+    axios.get("https://projeto-2-backend-davidmc.vercel.app/api/watchlist/")
       .then((res) => {
         setWatch(res.data);
         res.data.map((coin) => {
@@ -39,7 +39,7 @@ const Container = (props) => {
     
 
   const handleClick = (coin) => {
-    axios.get("https://projeto-2-backend-davidmc.vercel.app//api/watchlist/")
+    axios.get("https://projeto-2-backend-davidmc.vercel.app/api/watchlist/")
     .then((res) => {
       setWatch(res.data);
       res.data.map((coin) => {
@@ -62,7 +62,7 @@ const Container = (props) => {
     };
 
     // Make the API request to update the watchlist
-    axios.post(`https://projeto-2-backend-davidmc.vercel.app//api/watchlist/${coin.uuid}/`, data)
+    axios.post(`https://projeto-2-backend-davidmc.vercel.app/api/watchlist/${coin.uuid}/`, data)
       .then(() => {
         // After the request is successful, update the watchlist and uuidArray
         setWatch([...watch, data]);
