@@ -16,10 +16,10 @@ const getCoin = async(options) => {
 
 const Coin = (props) => {
     const [coin, setCoin] = useState({})
-    const [high, setHigh] = useState()
-    const [total, setTotal] = useState()
+    const [high, setHigh] = useState("")
+    const [total, setTotal] = useState("")
     const [max, setMax] = useState("")
-    const [circulating, setCirculating] = useState()
+    const [circulating, setCirculating] = useState("")
 
     const options = {
         method: 'GET',
@@ -52,7 +52,7 @@ const Coin = (props) => {
           if(response.data.data.coin.supply.circulating != undefined ){
             setCirculating(response.data.data.coin.supply.circulating);
           }
-          console.log(coin)
+          
         })
       })
 
@@ -61,11 +61,11 @@ const Coin = (props) => {
         <div className = ' h-full w-max-screen-md w-min-screen-sm'>
             <HeaderWatch/>
             <div className=' flex flex-row mx-14 grow justify-center flex-wrap mt-14 md:mt-20'>
-                <div className = 'flex grow max-w-screen-sm flex-col 2xl:mr-48 '>
+                <div className = 'flex grow max-w-screen-sm flex-col 2xl md:mx-48 '>
                     <div className = 'flex flex-row wrap items-center mb-7'>
                         <img className='max-h-28' src={coin.iconUrl}></img>
-                        <div className = "flex flex-col ml-4">
-                            <h1 className='mr-4 text-black text-4xl md:text-5xl font-extrabold'>{coin.name}</h1>
+                        <div className = "flex flex-col ml-4 mr-7">
+                            <h1 className=' text-black text-4xl md:text-5xl font-extrabold'>{coin.name}</h1>
                             <h1 className="font-medium mt-1.5 text-2xl md:text-3xl text-gray-500 font-mono">{coin.symbol}</h1>
                         </div>
                     </div>
