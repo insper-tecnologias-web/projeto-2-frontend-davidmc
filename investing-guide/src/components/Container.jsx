@@ -29,7 +29,7 @@ const Container = (props) => {
         })
       });
 
-    }, []); 
+    }); 
   
   
   const handleStar = (uuid) => {
