@@ -19,14 +19,17 @@ const Container = (props) => {
   const uuidList = [];
  
   // Fetch watchlist data and update uuidArray when the component mounts
-  axios.get("http://127.0.0.1:8000/api/watchlist/")
-    .then((res) => {
-      setWatch(res.data);
-      res.data.map((coin) => {
-        uuidList.push(coin.key)
-        setUuidArray(uuidList);
-      })
-    });
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8000/api/watchlist/")
+      .then((res) => {
+        setWatch(res.data);
+        res.data.map((coin) => {
+          uuidList.push(coin.key)
+          setUuidArray(uuidList);
+        })
+      });
+
+    }, []); 
   
   
   const handleStar = (uuid) => {

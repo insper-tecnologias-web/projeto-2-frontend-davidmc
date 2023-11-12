@@ -29,7 +29,7 @@ const Coin = (props) => {
             timePeriod: '24h'
         },
         headers: {
-            'X-RapidAPI-Key': '9dc0cd25c5msh7093cea7eab33dbp1ed6d1jsne0b3a44acc73',
+            'X-RapidAPI-Key': '7541aac9e3msh547581af012693ap19f8f7jsnb851a3edca13',
             'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
         }
         };
@@ -54,7 +54,7 @@ const Coin = (props) => {
           }
           
         })
-      })
+      }, []);
 
     return(
         
