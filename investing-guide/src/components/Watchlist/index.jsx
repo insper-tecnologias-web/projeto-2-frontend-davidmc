@@ -12,7 +12,7 @@ const Watchlist = (props) => {
 
     const getWatchlist = async () => {
         try {
-            const res = await axios.get("https://projeto-2-backend-davidmc.vercel.app/api/watchlist/");
+            const res = await axios.get("https://crypto-oracle-backend.onrender.com/api/watchlist/");
             setWatchlist(res.data);
         } catch (error) {
             console.error("Error fetching watchlist:", error);
